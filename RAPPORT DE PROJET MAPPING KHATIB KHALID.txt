@@ -1,0 +1,33 @@
+                                               KHATIB KHALID 4IIR G12
+          
+                               Rapport sur la création d'une application Spring Boot 
+
+
+Afin de rédiger ce rapport, je vais expliquer comment nous pouvons générer une application Spring Boot implémentant ces technologies particulières, puis suivre le processus de configuration, de développement et de test de l'application.
+
+La tâche de création du projet Spring Boot peut être effectuée de plusieurs manières.
+
+À l'aide de Spring Initializr, j'ai mis en place le projet en sélectionnant toutes les dépendances nécessaires au développement de l'application. Dans ce cas, ces dépendances incluaient, entre autres, Spring Data JPA, Lombok, Spring Web, Spring Boot DevTools et la base de données H2.
+
+Les entités JPA peuvent être définies comme des objets de modèle qui représentent les données dans une table de base de données. Ces objets contiennent des attributs mappés aux colonnes de la table et leurs relations avec d'autres entités peuvent également être spécifiées à l'aide d'annotations.
+
+Pour commencer, j'ai construit quelques entités JPA pour représenter les différents objets de l'application de données. J'ai opté pour le projet, et ce sont ces entités qui incarnent toutes les bonnes pratiques d'un point de vue développement - en choisissant des noms en anglais pour les entités et leurs caractéristiques.
+
+Dans ce cas, j'ai formé les entités « Utilisateur » et « Adresse » et j'ai inclus des attributs obligatoires tels que « nom d'utilisateur » ou « e-mail » pour l'entité Utilisateur, et des attributs tels que « rue », « ville » et « code postal » pour l’entité Adresse.
+
+*
+Lors du processus de configuration de la source de données, j'ai pu le faire via le fichier « application.properties ». Au début, j'avais configuré l'application pour qu'elle fonctionne avec une base de données H2 en mémoire. Ici, j'ai spécifié tous les paramètres de connexion nécessaires tels que l'URL, le nom d'utilisateur et le mot de passe.
+
+Créer des interfaces pour un référentiel est une procédure simple : faites un clic droit sur le package dans lequel vous souhaitez ajouter une interface, allez dans Nouveau -> Classe Java, et saisissez un nom précédé de I et suffixé du mot Référentiel.
+
+Pour rendre l'entité JPA disponible, je devrai créer une interface de référentiel correspondante à l'aide de Spring Data JPA. Cela vous permet d'effectuer facilement les opérations CRUD pour les entités associées puisque ces interfaces sont livrées avec leur propre ensemble de méthodes intégrées.
+
+J'ai créé des interfaces nommées `UserRepository` et `AddressRepository` pour correspondre au type d'entité, où chacune étendait `JpaRepository`.
+
+*
+Dès que toutes les entités, référentiels et configurations de sources de données ont été créés, j'ai effectué des tests sur l'application pour vérifier comment les opérations CRUD pouvaient être implémentées à l'aide de services ou de contrôleurs Spring. Pour vérifier que ces opérations fonctionnaient correctement, j'ai utilisé les méthodes des interfaces JpaRepository.
+Par conséquent, pour passer de la base de données H2 vers MySQL, la configuration a été modifiée dans le fichier `application.properties`. J'ai fourni les informations de connexion liées à MySQL telles que l'URL de la base de données, le nom d'utilisateur et le mot de passe.
+
+CONCLUSION :
+
+En suivant ces étapes, j'ai réussi à créer une application Spring Boot avec les fonctionnalités spécifiées, en utilisant les technologies demandées. L'application est capable d'effectuer des opérations CRUD sur les données stockées dans une base de données, avec la flexibilité de passer facilement d'une base de données H2 à MySQL selon les besoins du projet
