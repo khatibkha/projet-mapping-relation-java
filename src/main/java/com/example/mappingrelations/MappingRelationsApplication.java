@@ -36,7 +36,7 @@ public class MappingRelationsApplication {
 
 
 
-            Stream.of("souhail","yassine","driss","ilyass").forEach(s ->{
+            Stream.of("KHATIB","KHALID","TALOUNI","KARIM").forEach(s ->{
                 Course course = new Course();
                 course.setDescription("Spring Boot");
 
